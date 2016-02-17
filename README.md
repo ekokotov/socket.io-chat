@@ -1,4 +1,4 @@
-Simple axample of socket.io chat using NodeJS and Angular
+Simple example of socket.io chat using NodeJS and Angular
 =================
 ## Desription
 To run a chat just execute
