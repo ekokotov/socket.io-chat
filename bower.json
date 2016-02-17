@@ -1,0 +1,21 @@
+{
+  "name": "chat",
+  "version": "0.0.0",
+  "authors": [
+    "ekokotov <ekokotov@gmail.com>"
+  ],
+  "description": "socket chat",
+  "main": "client/chat.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-socket-io": "~0.7.0"
+  }
+}

@@ -1,0 +1,7 @@
+<div class="panel" ng-class="{'panel-info':message.user === 'Unknown', 'panel-success':message.user !== 'Unknown'}" >
+	<div class="panel-heading">
+		<h3 class="panel-title" ng-bind="message.user"></h3>
+	</div>
+	<div class="panel-body" ng-bind-html="message.text | html">
+	</div>
+</div>

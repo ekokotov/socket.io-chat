@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Chat page</title>
+		<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="./assets/style.css">
+		<script src="http://localhost:1516/socket.io/socket.io.js"></script>
+		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="../bower_components/angular-socket-io/socket.min.js"></script>
+		<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="chat.js"></script>
+		<script type="text/javascript">
+			var SOCKETADDR = '/';
+		</script>
+	</head>
+	<body ng-app="chat" ng-controller="main as vm">
+		<div class="main">
+			<div class="panel panel-default main-panel">
+				<div class="panel-heading header">
+					<h3 class="panel-title" ng-bind="vm.header"></h3>
+				</div>
+				<div class="panel-body">
+					<div ng-repeat="message in vm.messages" ng-switch on="message.type">
+						<div ng-switch-when="USER">
+							<div ng-include="'/userMessage.html'"></div>
+						</div>
+						<div ng-switch-when="SYSTEM">
+							<div ng-include="'/systemMessage.html'"></div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="input-group">
+						<input type="text" class="form-control" ng-enter="vm.sendMessage()" ng-model="vm.myMessage.text">
+						<span class="input-group-btn">
+							<button class="btn btn-primary" ng-click="vm.sendMessage()" type="button">
+							<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+							Go!</button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

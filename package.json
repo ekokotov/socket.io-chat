@@ -1,0 +1,17 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "socket chat",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever start app.js"
+  },
+  "author": "yk",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4",
+    "forever": "^0.15.1",
+    "socket.io": "^1.4.5"
+  }
+}
